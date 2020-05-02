@@ -9,7 +9,7 @@
     "build:d": "webpack --config webpack.dev.js --display-error-details --progress",
     "build:p": "webpack --config webpack.prod.js --display-error-details --progress",
     "watch": "yarn run build:d --watch",
-    "execwatch": "nodemon dist/index.js",
+    "execwatch": "nodemon dist/bundle.js",
     "prettier:fix": "prettier --write ./src/**/*.{ts,js} ./src/*.{ts,js} ./*.js",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx  --fix ./src",
     "lint:check": "eslint --ext .js,.jsx,.ts,.tsx ./src"

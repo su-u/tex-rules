@@ -1,0 +1,229 @@
+\documentclass[11pt]{ltjsarticle}
+
+\usepackage[haranoaji, nfssonly]{luatexja-preset}
+\usepackage{graphicx}
+\usepackage{url}
+
+\newcommand{\tabref}[1]{表~\ref{#1}}
+\newcommand{\figref}[1]{図~\ref{#1}}
+\newcommand{\qeuref}[1]{式~\ref{#1}}
+
+
+\title{UNO説明資料}
+\author{菅原直輝}
+
+\begin{document}
+
+\thispagestyle{empty}
+\vspace*{20pt}
+
+\begin{flushright}
+  2020年04月29日
+
+  千葉工業大学　菅原直輝
+\end{flushright}
+
+\vspace*{100pt}
+\begin{center}
+{\Huge UNO説明資料}
+\end{center}
+
+\newpage
+
+\pagenumbering{roman}
+\tableofcontents
+
+\clearpage
+\pagenumbering{arabic}
+
+\section{UNOとは}
+UNOとは専用のカードを用いて遊ぶゲームである．配られた手札を早くなくした人が勝者となる．
+プレイヤーの人数は2～10人．UNOの語源はスペイン語・イタリア語で「1」を意味する「uno」から由来する\cite{UNO-AMAZON}．
+
+
+\section{遊び方}
+\subsection{準備}
+ゲームを開始する前に，カードを配るなどの準備が必要となる\cite{日本ウノ協会公認ルール}．
+\begin{enumerate}
+  \label{ゲーム準備}
+  \item 全員が裏返しで1枚ずつカードを引き，一番数字が大きい人（記号カード，特殊カードは0とする）をスタートプレイヤーとする．
+  もしくはじゃんけんによって決める．
+  \item スタートプレイヤーはカードをよくシャッフルし，スタートプレイヤーの右隣の人がカットし，それを左から順番に1枚ずつ7枚を全員に配布する．
+  \item スタートプレイヤーは山札の一番上のカードを場のカードとする．このとき，ワイルド・ドローフォーのときは山札をシャッフルしてやり直す．
+  ドローツー，スキップ，リバースの際は，スタートプレイヤーがそれを出したように扱う．
+\end{enumerate}
+\subsection{ゲーム進行}
+% TODO: 文章を入れる
+\begin{enumerate}
+  \item スタートプレイヤーの左隣のプレイヤーから時計周りに同じ色のカード，同じ数字のカードを出していく．
+  \item 場にカードを出せない場合は，山札からカードを1枚引く．
+  \item 山札から引いたカードをそのまま場に出すこともできる．
+  \item 山札がなくなった場合，一番上をのぞく場のカードをスタートプレイヤーがシャッフルし，その後左隣のプレイヤーがカットしあらためて山札とする．
+  \item 手札が残り1枚になったときは``ウノ''と宣言する．詳しくは\ref{sec:``ウノ''の宣言}に示す．
+  \item 1人のプレイヤーの手札が0枚になった場合，1ラウンドの終了となり各プレイヤーのスコアを出す．スコアリングについては\ref{sec:スコアリング}に示す．
+\end{enumerate}
+
+\newpage
+
+\section{スコアリング}
+\label{seac:スコアリング}
+
+\subsection{ポイント}
+
+あがったプレイヤーは他のプレイヤー全員の手札の合計ポイントが得点となる．
+また他のプレイヤーは自分の手札の合計ポイントだけ減点される．
+
+各カードのポイントを\tabref{tab:カードポイント}に示す．
+
+\begin{table}[h]
+  \begin{center}
+    \caption{各カードのポイント}
+    \begin{tabular}{|l|c|} \hline
+      カード & ポイント \\ \hline \hline
+      各数字カード & カードに書いてある0～9ポイント \\
+      各記号カード & 各20ポイント \\
+      特殊カード & 各50ポイント \\ \hline
+    \end{tabular}
+    \label{tab:カードポイント}
+  \end{center}
+\end{table}
+
+\subsection{順位}
+全5ラウンドを通じて，最終的に得点が高い順から1位，2位…と順位を決定する\cite{日本ウノ協会公認ルール}．
+
+
+\section{利用するカード}
+UNOでは専用のカードが利用される．カードは大きく次の3種類に分類される．
+
+\begin{itemize}
+  \item 赤，青，黄，緑の色がついた0～9の数字カード．詳細は\ref{sec:数字カード}にて記述する．
+  \item 赤，青，黄，緑の色がついた記号カード．詳細は\ref{sec:記号カード}にて記述する．
+  \item 色のない特殊カード．詳細は\ref{sec:特殊カード}にて記述する．
+\end{itemize}
+
+\subsection{数字カード}
+\label{sec:数字カード}
+数字カードは赤，青，黄，緑の4色があり，0～9の数字で構成される．
+0は各色2枚．1～9は各色2枚ずつで構成される．
+数字カードは，場のカードと同じ数字のカードのみ出せる．
+数字カードの例を\figref{fig:数字カードの例}に示す．
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_数字カード.pdf}
+    \caption{数字カードの例}
+    \label{fig:数字カードの例}
+  \end{center}
+\end{figure}
+
+
+\newpage
+
+\subsection{記号カード}
+\label{sec:記号カード}
+記号カードは赤，青，緑，黄の色があり，場のカードと同じ色のカードのみ出せる．各色2枚ずつで構成される\cite{日本ウノ協会公認ルール}。
+
+\subsubsection{ドローツー}
+次の手番のプレイヤーは山札からカードを2枚引く．
+このカードで山札からカードを引かされたプレイヤーの手番はそこで終了し，
+場にカードを出すことはできない\cite{日本ウノ協会公認ルール}．
+\figref{fig:ドローツーカードの例}にドローツーカードの例を示す．
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_記号カード.pdf}
+    \caption{ドローツーカードの例}
+    \label{fig:ドローツーカードの例}
+  \end{center}
+\end{figure}
+
+\subsubsection{リバース}
+手番が反対回りになる．2人でプレイしている場合はスキップと同じ効果をもつ\cite{日本ウノ協会公認ルール}．
+\figref{fig:リバースカードの例}にリバースカードの例を示す．
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_リバースカード.pdf}
+    \caption{リバースカードの例}
+    \label{fig:リバースカードの例}
+  \end{center}
+\end{figure}
+
+\subsubsection{スキップ}
+次のプレイヤーの手番を飛ばす\cite{日本ウノ協会公認ルール}．
+\figref{fig:スキップカードの例}にスキップカードの例を示す．
+
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_スキップカード.pdf}
+    \caption{スキップカードの例}
+    \label{fig:スキップカードの例}
+  \end{center}
+\end{figure}
+
+\newpage
+
+\subsection{特殊カード}
+\label{sec:特殊カード}
+特殊カードは色がなく，場のカードによる制限を受けない．
+特殊カードは各種4枚ずつで構成される．
+
+\subsubsection{ワイルド}
+場のカードに関わりなく自分の手番ならいつでも出せ，さらに場の色を指定できる\cite{日本ウノ協会公認ルール}．
+\figref{fig:ワイルドカードの例}にワイルドカードの例を示す．
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_ワイルドカード.pdf}
+    \caption{ワイルドカードの例}
+    \label{fig:ワイルドカードの例}
+  \end{center}
+\end{figure}
+
+\subsubsection{ワイルド・ドローフォー}
+場のカードに関わりなく，自分の手札に場の色と同じ色のカードを持っていなければ，いつでも出せる．
+場の色を指定でき，次の手番のプレイヤーに山札から4枚引かせる．
+カードを引いたプレイヤーの手番はそこで終了する．
+なお，カードを引くこととなるプレイヤーには，
+カードを引く代わりに，\ref{sec:チャレンジ}に示す「チャレンジ」をする権利がある\cite{日本ウノ協会公認ルール}．
+\figref{fig:ワイルド・ドローフォーカードの例}にワイルド・ドローフォーカードの例を示す．
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.25 \linewidth]{assets/UNO_特殊カード.pdf}
+    \caption{ワイルド・ドローフォーカードの例}
+    \label{fig:ワイルド・ドローフォーカードの例}
+  \end{center}
+\end{figure}
+
+\newpage
+
+\section{ルール}
+\subsection{チャレンジ}
+\label{sec:チャレンジ}
+ワイルド・ドローフォーを出された次の手番のプレイヤーは
+直前のプレイヤーが，本当に場のカードと同じ色のカードが手札にないか``チャレンジ''と宣言してチェックできる．
+チャレンジされたプレイヤーはチャレンジしたプレイヤーにのみ手札を公開する．
+
+同じ色のカードが手札にあった場合，
+チャレンジ成功となりワイルド・ドローフォーを出したプレイヤーが4枚のカードを引かなければならない．
+またワイルド・ドローフォーのカードは手札に戻し，正しいカード（場のカードと同じ色のカードやワイルドカードなど）を出す．
+
+同じ色のカードが手札になかった場合，
+チャレンジ失敗となりチャレンジしたプレイヤーがチャレンジのペナルティ分である2枚を含めて合計6枚のカードを引く．
+次の色指定は通常どおりにワイルド・ドローフォーを出したプレイヤーが決める\cite{日本ウノ協会公認ルール}．
+
+\subsection{``ウノ''の宣言}
+\label{sec:``ウノ''の宣言}
+手札が残り1枚になったときは``ウノ''と宣言する必要がある．
+宣言を忘れた場合は，ペナルティとして山札からカードを2枚引く．
+ただし，次のプレイヤーが場にカードを出した後の指摘ではペナルティは無効となり，
+カードを引かなくてよい\cite{日本ウノ協会公認ルール}．
+
+\newpage
+
+\bibliographystyle{junsrt}
+\nocite{*}
+\bibliography{DB}
+\end{document}
