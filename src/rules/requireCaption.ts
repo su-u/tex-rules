@@ -1,11 +1,10 @@
-export const requireCaption = (ast: any): number => {
+export const requireCaption = (ast: any, report: any): number => {
   return ast.some((node: any) => {
     switch (node.kind) {
       case 'env': {
-        return requireCaption(node.content);
+        return requireCaption(node.content, report);
       }
       case 'command': {
-        console.log(node);
         if (node.name === 'caption') {
           return 1;
         }

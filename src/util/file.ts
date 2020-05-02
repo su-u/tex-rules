@@ -7,7 +7,8 @@ export const readFile = (filePath: string): string => {
 export const writeAstToJson = (ast: any): void => {
   fs.writeFile('outDir/out.json', JSON.stringify(ast, undefined, 2), err => {
     if (err) {
-    } else {
+      // eslint-disable-next-line no-console
+      console.error(err);
     }
   });
 };
