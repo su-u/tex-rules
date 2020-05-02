@@ -4674,6 +4674,14 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
+latex-utensils@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/latex-utensils/-/latex-utensils-1.2.3.tgz#bb9194bb7e31d43372684b056f4306d25ca068d1"
+  integrity sha512-7CH/7ZA6PYoS7ih7WivPoZaFWqo84O9wx1j0cB97sOyrSYX7t1BF1yG1PymmtH66buZTzpef0fUh9dHgd1Cz3w==
+  optionalDependencies:
+    commander "^2.20.0"
+    pegjs-backtrace "^0.2.0"
+
 lcid@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lcid/-/lcid-2.0.0.tgz#6ef5d2df60e52f82eb228a4c373e8d1f397253cf"
@@ -5543,6 +5551,11 @@ pbkdf2@^3.0.3:
     ripemd160 "^2.0.1"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+pegjs-backtrace@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/pegjs-backtrace/-/pegjs-backtrace-0.2.0.tgz#f6083d80059640af2fc96ec1541f1c640ed69512"
+  integrity sha512-wWczRCecnPlAdSc6Sfqb+3RY89Rhfcxud6+45tuN6f2BNJDd0vQaHIC4TggdlLfMrlhhy37MhznV+Axj2k7xyQ==
 
 performance-now@^2.1.0:
   version "2.1.0"

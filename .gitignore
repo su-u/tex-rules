@@ -355,3 +355,4 @@ MigrationBackup/
 .idea/
 build/
 dist/
+outDir/
