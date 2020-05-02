@@ -31,7 +31,7 @@ const switcher = (ast: any) => {
       }
       case 'env': {
         if (requireCaptionslist.includes(node.name)) {
-          const hasCaption = requireCaption(node.content, report);
+          const hasCaption = requireCaption(node.content);
           if (!hasCaption) {
             const location = node.location;
             report(
