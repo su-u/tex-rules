@@ -1,18 +1,12 @@
 import { readFile, writeAstToJson } from '@/util/file';
-import { requireCaption } from '@/rules/requireCaption';
-
-import * as fs from 'fs';
-
-import { latexParser } from 'latex-utensils';
-const texString = fs.readFileSync('./tex/uno.tex', { encoding: 'utf-8' });
-const ast = latexParser.parse(texString);
-console.log(JSON.stringify(ast, undefined, '  '));
-
-writeAstToJson(ast);
+import { TexToAst } from '@/util/tex';
+// import { requireCaption } from '@/rules/requireCaption';
 
 const main = () => {
-  const lines = file('./tex/uno.tex');
-  requireCaption(lines);
+  const texString = readFile('./tex/uno.tex');
+  const ast = TexToAst(texString);
+  writeAstToJson(ast);
+  // requireCaption(lines);
 };
 
-// main();
+main();

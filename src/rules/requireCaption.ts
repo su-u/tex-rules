@@ -1,6 +1,3 @@
-export const requireCaption = (textLines: string[]): number => {
-  textLines.forEach(line => {
-    console.log(line);
-  });
+export const requireCaption = (ast: any): number => {
   return 0;
 };
