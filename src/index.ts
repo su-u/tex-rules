@@ -1,9 +1,6 @@
 import { readFile, writeAstToJson } from '@/util/file';
 import { TexToAst, getDocument } from '@/util/tex';
-import { requireCaption } from '@/rules/requireCaption';
-
-// eslint-disable-next-line no-undef
-const requireCaptionslist: ReadonlyArray<string> = ['figure'];
+import { requireCaption, requireCaptionsList } from '@/rules/requireCaption';
 
 type reportType = {
   errorText: string;
@@ -30,7 +27,7 @@ const switcher = (ast: any) => {
         break;
       }
       case 'env': {
-        if (requireCaptionslist.includes(node.name)) {
+        if (requireCaptionsList.includes(node.name)) {
           const hasCaption = requireCaption(node.content);
           if (!hasCaption) {
             const location = node.location;
@@ -51,7 +48,7 @@ const main = () => {
   const texString = readFile('./tex/uno.tex');
   const ast = TexToAst(texString);
   const documentAst = getDocument(ast);
-  writeAstToJson(documentAst);
+  writeAstToJson(ast);
   switcher(documentAst.content);
   reportList.forEach(report => {
     // eslint-disable-next-line no-console

@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-undef
+export const requireCaptionsList: ReadonlyArray<string> = ['figure', 'table'];
+
 export const requireCaption = (ast: any): number => {
   return ast.some((node: any) => {
     switch (node.kind) {
