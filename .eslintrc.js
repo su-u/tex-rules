@@ -35,7 +35,7 @@ module.exports = {
     'no-extra-semi': 'error',
     'no-unexpected-multiline': 'error',
     'no-unreachable': 'error',
-    indent: [2, 2],
+    "indent": ["error", 2, {"SwitchCase": 1}],
 
     'no-extra-bind': 'warn',
     'no-fallthrough': 'warn',
@@ -48,6 +48,7 @@ module.exports = {
     'max-len': 'warn',
     'prefer-const': 'warn',
     // 'arrow-parens': 'error',
+
   },
   settings: {
     propWrapperFunctions: [
