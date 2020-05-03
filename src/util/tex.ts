@@ -1,8 +1,7 @@
 import { latexParser } from 'latex-utensils';
 
 export const TexToAst = (text: string): any => {
-  const ast = latexParser.parse(text);
-  return ast;
+  return latexParser.parse(text);
 };
 
 export const getDocument = (ast: any): any => {
