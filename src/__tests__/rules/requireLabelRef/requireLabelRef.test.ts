@@ -4,7 +4,7 @@ import { texToDocumentAst } from '@/util/test';
 describe('LabelRefClass', (): void => {
   test('すべてのラベルは参照されている', (): void => {
     const ast = texToDocumentAst(
-      './src/__tests__/requireLabelRef/tex/label_refed.tex',
+      './src/__tests__/rules/requireLabelRef/tex/label_refed.tex',
     );
     const labelRef = new LabelRefClass();
 
@@ -21,7 +21,7 @@ describe('LabelRefClass', (): void => {
 
   test('参照されていないラベルが存在している', (): void => {
     const ast = texToDocumentAst(
-      './src/__tests__/requireLabelRef/tex/label_not_refed.tex',
+      './src/__tests__/rules/requireLabelRef/tex/label_not_refed.tex',
     );
     const labelRef = new LabelRefClass();
 
