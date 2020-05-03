@@ -35,4 +35,7 @@ describe('interpreter', (): void => {
   test('図のキャプション、ラベルなし', (): void => {
     texTest('./src/__tests__/tex/interpreter_case_4.tex', 2);
   });
+  test('ラベル参照なし、tabref', (): void => {
+    texTest('./src/__tests__/tex/interpreter_case_5.tex', 2);
+  });
 });
