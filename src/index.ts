@@ -48,7 +48,8 @@ const main = () => {
   const texString = readFile('./tex/uno.tex');
   const ast = TexToAst(texString);
   const documentAst = getDocument(ast);
-  writeAstToJson(ast);
+  writeAstToJson('outDir/out.json', ast);
+  writeAstToJson('outDir/document.json', documentAst);
   switcher(documentAst.content);
   reportList.forEach(report => {
     // eslint-disable-next-line no-console

@@ -4,8 +4,8 @@ export const readFile = (filePath: string): string => {
   return fs.readFileSync(filePath, { encoding: 'utf-8' });
 };
 
-export const writeAstToJson = (ast: any): void => {
-  fs.writeFile('outDir/out.json', JSON.stringify(ast, undefined, 2), err => {
+export const writeAstToJson = (filePath: string, ast: any): void => {
+  fs.writeFile(filePath, JSON.stringify(ast, undefined, 2), err => {
     if (err) {
       // eslint-disable-next-line no-console
       console.error(err);
