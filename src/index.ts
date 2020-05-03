@@ -1,38 +1,8 @@
 import { readFile, writeAstToJson } from '@/util/file';
 import { TexToAst, getDocument } from '@/util/tex';
-import { requireCaption, requireCaptionsList } from '@/rules/requireCaption';
-import { requireLabel, requireLabelsList } from '@/rules/requireLabel';
 import { LabelRefClass } from '@/rules/requireLabelRef';
 import { report, reportOutput } from '@/report';
-
-const labelRef = new LabelRefClass();
-
-const interpreter = (node: any) => {
-  switch (node.kind) {
-    case 'env': {
-      if (requireCaptionsList.includes(node.name)) {
-        if (!requireCaption(node.content)) {
-          report(`${node.name}にキャプションがありません`, 'error', node);
-        }
-      }
-      if (requireLabelsList.includes(node.name)) {
-        if (!requireLabel(node.content)) {
-          report(`${node.name}にラベルがありません`, 'error', node);
-        }
-      }
-      node.content.forEach((node: any) => interpreter(node));
-      break;
-    }
-    case 'command': {
-      if (node.name === 'label') labelRef.addLabel(node);
-      if (node.name === 'ref') labelRef.addRef(node);
-      break;
-    }
-    default: {
-      break;
-    }
-  }
-};
+import { interpreter } from '@/interpreter';
 
 const main = () => {
   const texString = readFile('./tex/sample.tex');
@@ -41,9 +11,15 @@ const main = () => {
   writeAstToJson('outDir/out.json', ast);
   writeAstToJson('outDir/document.json', documentAst);
 
-  documentAst.content.forEach((node: any) => interpreter(node));
+  const context = {
+    labelRef: new LabelRefClass(),
+  };
 
-  labelRef.labelAggregate(report);
+  documentAst.content.forEach((node: any) =>
+    interpreter(context, node, report),
+  );
+
+  context.labelRef.labelAggregate(report);
   reportOutput();
 };
 
