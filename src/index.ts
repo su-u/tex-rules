@@ -9,9 +9,6 @@ const labelRef = new LabelRefClass();
 
 const interpreter = (node: any) => {
   switch (node.kind) {
-    case 'parbreak': {
-      break;
-    }
     case 'env': {
       if (requireCaptionsList.includes(node.name)) {
         if (!requireCaption(node.content)) {
@@ -29,6 +26,9 @@ const interpreter = (node: any) => {
     case 'command': {
       if (node.name === 'label') labelRef.addLabel(node);
       if (node.name === 'ref') labelRef.addRef(node);
+      break;
+    }
+    default: {
       break;
     }
   }
