@@ -4,7 +4,39 @@ import { contextType } from '@/index';
 import { refCommands } from '@/rules/requireLabelRef';
 import { sections, sectionIsRequiredText } from '@/rules/sectionIsRequiredText';
 
+// type execItems = {
+//   names: ReadonlyArray<string>;
+//   func: any;
+// };
+//
+// type kindKeys = 'env' | 'command';
+
 export const interpreter = (context: contextType, node: any[]) => {
+  // const execList: { [key in kindKeys]: execItems[] } = {
+  //   env: [
+  //       names: requireCaptionsList,
+  //       func: requireCaption,
+  //     },
+  //       names: requireLabelsList,
+  //       func: requireLabel,
+  //     },
+  //   ],
+  //   command: [
+  //     {
+  //       names: ['label'],
+  //       func: context.labelRef.addLabel,
+  //     },
+  //     {
+  //       names: refCommands,
+  //       func: context.labelRef.addRef,
+  //     },
+  //     {
+  //       names: sections,
+  //       func: sectionIsRequiredText,
+  //     },
+  //   ],
+  // };
+
   node.forEach((node, index, array) => {
     switch (node.kind) {
       case 'env': {
@@ -30,7 +62,6 @@ export const interpreter = (context: contextType, node: any[]) => {
           sectionIsRequiredText(
             context,
             node,
-            index,
             array.slice(index, array.length),
           );
         }
