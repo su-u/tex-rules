@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     browser: true,
   },
-  parser: 'babel-eslint',
+  // parser: 'babel-eslint',
   parserOptions: {
     version: 2018,
     sourceType: 'module',
