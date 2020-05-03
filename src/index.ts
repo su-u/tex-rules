@@ -16,6 +16,7 @@ const switcher = (ast: any) => {
             const location = node.location;
             report(
               `${node.name}にキャプションがありません`,
+              'error',
               node.name,
               location.start.line,
               location.start.column,
