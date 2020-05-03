@@ -1,24 +1,7 @@
 import { readFile, writeAstToJson } from '@/util/file';
 import { TexToAst, getDocument } from '@/util/tex';
 import { requireCaption, requireCaptionsList } from '@/rules/requireCaption';
-
-type reportType = {
-  errorText: string;
-  nodeName: string;
-  line: number;
-  column: number;
-};
-
-const reportList: reportType[] = [];
-
-const report = (
-  errorText: string,
-  nodeName: string,
-  line: number,
-  column: number,
-) => {
-  reportList.push({ errorText, nodeName, line, column });
-};
+import { report, reportOutput } from '@/./report';
 
 const switcher = (ast: any) => {
   ast.forEach((node: any) => {
@@ -51,10 +34,7 @@ const main = () => {
   writeAstToJson('outDir/out.json', ast);
   writeAstToJson('outDir/document.json', documentAst);
   switcher(documentAst.content);
-  reportList.forEach(report => {
-    // eslint-disable-next-line no-console
-    console.log(report);
-  });
+  reportOutput();
 };
 
 main();
