@@ -3,7 +3,7 @@ import { requireLabel, requireLabelsList } from '@/rules/requireLabel';
 import { contextType } from '@/index';
 
 export const interpreter = (context: contextType, node: any[]) => {
-  node.forEach((node, index) => {
+  node.forEach((node: any) => {
     switch (node.kind) {
       case 'env': {
         if (requireCaptionsList.includes(node.name)) {
