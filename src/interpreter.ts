@@ -14,9 +14,11 @@ import { sections, sectionIsRequiredText } from '@/rules/sectionIsRequiredText';
 export const interpreter = (context: contextType, node: any[]) => {
   // const execList: { [key in kindKeys]: execItems[] } = {
   //   env: [
+  //     {
   //       names: requireCaptionsList,
   //       func: requireCaption,
   //     },
+  //     {
   //       names: requireLabelsList,
   //       func: requireLabel,
   //     },
