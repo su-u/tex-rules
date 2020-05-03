@@ -197,38 +197,38 @@
             },
             {
               "kind": "command",
-              "name": "caption",
+              "name": "label",
               "args": [
                 {
                   "kind": "arg.group",
                   "content": [
                     {
                       "kind": "text.string",
-                      "content": "数字カードの例",
+                      "content": "fig:数字カードの例",
                       "location": {
                         "start": {
-                          "offset": 167,
+                          "offset": 165,
                           "line": 8,
-                          "column": 14
+                          "column": 12
                         },
                         "end": {
-                          "offset": 174,
+                          "offset": 176,
                           "line": 8,
-                          "column": 21
+                          "column": 23
                         }
                       }
                     }
                   ],
                   "location": {
                     "start": {
-                      "offset": 166,
+                      "offset": 164,
                       "line": 8,
-                      "column": 13
+                      "column": 11
                     },
                     "end": {
-                      "offset": 175,
+                      "offset": 177,
                       "line": 8,
-                      "column": 22
+                      "column": 24
                     }
                   }
                 }
@@ -240,59 +240,8 @@
                   "column": 5
                 },
                 "end": {
-                  "offset": 175,
+                  "offset": 177,
                   "line": 8,
-                  "column": 22
-                }
-              }
-            },
-            {
-              "kind": "command",
-              "name": "label",
-              "args": [
-                {
-                  "kind": "arg.group",
-                  "content": [
-                    {
-                      "kind": "text.string",
-                      "content": "fig:数字カードの例",
-                      "location": {
-                        "start": {
-                          "offset": 187,
-                          "line": 9,
-                          "column": 12
-                        },
-                        "end": {
-                          "offset": 198,
-                          "line": 9,
-                          "column": 23
-                        }
-                      }
-                    }
-                  ],
-                  "location": {
-                    "start": {
-                      "offset": 186,
-                      "line": 9,
-                      "column": 11
-                    },
-                    "end": {
-                      "offset": 199,
-                      "line": 9,
-                      "column": 24
-                    }
-                  }
-                }
-              ],
-              "location": {
-                "start": {
-                  "offset": 180,
-                  "line": 9,
-                  "column": 5
-                },
-                "end": {
-                  "offset": 199,
-                  "line": 9,
                   "column": 24
                 }
               }
@@ -305,8 +254,8 @@
               "column": 3
             },
             "end": {
-              "offset": 214,
-              "line": 10,
+              "offset": 192,
+              "line": 9,
               "column": 15
             }
           }
@@ -319,8 +268,8 @@
           "column": 1
         },
         "end": {
-          "offset": 227,
-          "line": 11,
+          "offset": 205,
+          "line": 10,
           "column": 13
         }
       }
@@ -329,13 +278,13 @@
       "kind": "parbreak",
       "location": {
         "start": {
-          "offset": 227,
-          "line": 11,
+          "offset": 205,
+          "line": 10,
           "column": 13
         },
         "end": {
-          "offset": 229,
-          "line": 13,
+          "offset": 207,
+          "line": 12,
           "column": 1
         }
       }
@@ -348,8 +297,8 @@
       "column": 1
     },
     "end": {
-      "offset": 243,
-      "line": 13,
+      "offset": 221,
+      "line": 12,
       "column": 15
     }
   }
