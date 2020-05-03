@@ -23,7 +23,7 @@ const main = () => {
     report: report.report,
   };
 
-  documentAst.content.forEach((node: any) => interpreter(context, node));
+  interpreter(context, documentAst.content);
 
   context.labelRef.labelAggregate(report.report);
   report.reportOutput();

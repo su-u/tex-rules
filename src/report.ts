@@ -22,15 +22,15 @@ export class ReportClass {
     this.reportList = [];
   }
 
-   report = (errorText: string, reportType: reportKey, node: any): void => {
-      this.reportList.push({
-        errorText,
-        reportType,
-        nodeName: node.name,
-        line: node.location.start.line,
-        column: node.location.start.column,
-      });
-    };
+  report = (errorText: string, reportType: reportKey, node: any): void => {
+    this.reportList.push({
+      errorText,
+      reportType,
+      nodeName: node.name,
+      line: node.location.start.line,
+      column: node.location.start.column,
+    });
+  };
 
   reportOutput = (): void => {
     this.reportList.forEach(report => {
@@ -44,5 +44,4 @@ export class ReportClass {
       );
     });
   };
-
 }
