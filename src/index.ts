@@ -1,7 +1,7 @@
 import { readFile, writeAstToJson } from '@/util/file';
 import { TexToAst, getDocument } from '@/util/tex';
 import { LabelRefClass } from '@/rules/requireLabelRef';
-import { report, reportKey, reportOutput } from '@/report';
+import { ReportClass, reportKey } from '@/report';
 import { interpreter } from '@/interpreter';
 
 export type contextType = {
@@ -16,15 +16,17 @@ const main = () => {
   writeAstToJson('outDir/out.json', ast);
   writeAstToJson('outDir/document.json', documentAst);
 
+  const report = new ReportClass();
+
   const context: contextType = {
     labelRef: new LabelRefClass(),
-    report: report,
+    report: report.report,
   };
 
   documentAst.content.forEach((node: any) => interpreter(context, node));
 
-  context.labelRef.labelAggregate(report);
-  reportOutput();
+  context.labelRef.labelAggregate(report.report);
+  report.reportOutput();
 };
 
 main();
