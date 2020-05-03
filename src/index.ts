@@ -10,11 +10,12 @@ export type contextType = {
 };
 
 const main = () => {
-  const texString = readFile('./tex/sample.tex');
+  const mainPath = process.argv[2] ?? '';
+  const texString = readFile(mainPath);
   const ast = TexToAst(texString);
   const documentAst = getDocument(ast);
-  writeAstToJson('outDir/out.json', ast);
-  writeAstToJson('outDir/document.json', documentAst);
+  // writeAstToJson('outDir/out.json', ast);
+  // writeAstToJson('outDir/document.json', documentAst);
 
   const report = new ReportClass();
 
