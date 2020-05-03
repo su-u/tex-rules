@@ -1,4 +1,5 @@
-import { BLACK, WHITE, RESET, RED } from '@/util/console';
+import { WHITE, RESET, RED } from '@/util/console';
+import colors from 'colors/safe';
 
 export type reportKey = 'error' | 'info';
 
@@ -36,11 +37,11 @@ export class ReportClass {
     this.reportList.forEach(report => {
       // eslint-disable-next-line no-console
       console.log(
-        `${WHITE}${('  ' + report.line).substr(-3)}:${report.column} ${
+        `${colors.gray(`${('   ' + report.line).substr(-4)}:${report.column}`)}  ${
           reportOutputTextColor[report.reportType]
-        }${report.reportType}${BLACK} ${report.errorText}\t${WHITE}${
+        }${report.reportType}${RESET}  ${report.errorText}\t${colors.gray(`${
           report.nodeName
-        }${RESET}`,
+        }`)}${RESET}`,
       );
     });
   };
