@@ -17,7 +17,7 @@ export type reportType = {
   column: number;
 };
 
-export const report = (errorText: string, reportType: reportKey, node: any) => {
+export const report = (errorText: string, reportType: reportKey, node: any): void => {
   reportList.push({
     errorText,
     reportType,
@@ -27,7 +27,7 @@ export const report = (errorText: string, reportType: reportKey, node: any) => {
   });
 };
 
-export const reportOutput = () => {
+export const reportOutput = (): void => {
   reportList.forEach(report => {
     // eslint-disable-next-line no-console
     console.log(

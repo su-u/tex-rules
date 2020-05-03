@@ -1,20 +1,25 @@
 import { requireCaption, requireCaptionsList } from '@/rules/requireCaption';
 import { requireLabel, requireLabelsList } from '@/rules/requireLabel';
+import { contextType } from '@/index';
 
-export const interpreter = (context: any, node: any, report: any) => {
+export const interpreter = (context: contextType, node: any) => {
   switch (node.kind) {
     case 'env': {
       if (requireCaptionsList.includes(node.name)) {
         if (!requireCaption(node.content)) {
-          report(`${node.name}にキャプションがありません`, 'error', node);
+          context.report(
+            `${node.name}にキャプションがありません`,
+            'error',
+            node,
+          );
         }
       }
       if (requireLabelsList.includes(node.name)) {
         if (!requireLabel(node.content)) {
-          report(`${node.name}にラベルがありません`, 'error', node);
+          context.report(`${node.name}にラベルがありません`, 'error', node);
         }
       }
-      node.content.forEach((node: any) => interpreter(context, node, report));
+      node.content.forEach((node: any) => interpreter(context, node));
       break;
     }
     case 'command': {
