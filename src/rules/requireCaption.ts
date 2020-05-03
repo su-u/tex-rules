@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef
 export const requireCaptionsList: ReadonlyArray<string> = ['figure', 'table'];
 
-export const requireCaption = (ast: any): number => {
+export const requireCaption = (ast: any): boolean => {
   return ast.some((node: any) => {
     switch (node.kind) {
       case 'env': {
@@ -9,12 +9,12 @@ export const requireCaption = (ast: any): number => {
       }
       case 'command': {
         if (node.name === 'caption') {
-          return 0;
+          return true;
         }
-        return 1;
+        return false;
       }
       default:
-        return 1;
+        return false;
     }
   });
 };

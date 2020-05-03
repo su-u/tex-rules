@@ -12,12 +12,12 @@ const switcher = (ast: any) => {
       }
       case 'env': {
         if (requireCaptionsList.includes(node.name)) {
-          if (requireCaption(node.content)) {
+          if (!requireCaption(node.content)) {
             report(`${node.name}にキャプションがありません`, 'error', node);
           }
         }
         if (requireLabelsList.includes(node.name)) {
-          if (requireLabel(node.content)) {
+          if (!requireLabel(node.content)) {
             report(`${node.name}にラベルがありません`, 'error', node);
           }
         }
