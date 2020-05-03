@@ -357,3 +357,4 @@ build/
 dist/
 outDir/
 coverage/
+tex/sample.tex
