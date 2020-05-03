@@ -1,6 +1,8 @@
 // ラベル参照を必須にするルール
 import { reportKey } from '@/report';
 
+export const refCommands: ReadonlyArray<string> = ['ref', 'tabref'];
+
 type labelType = {
   labelName: string;
   node: any;

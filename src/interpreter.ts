@@ -1,6 +1,7 @@
 import { requireCaption, requireCaptionsList } from '@/rules/requireCaption';
 import { requireLabel, requireLabelsList } from '@/rules/requireLabel';
 import { contextType } from '@/index';
+import { refCommands } from '@/rules/requireLabelRef';
 
 export const interpreter = (context: contextType, node: any[]) => {
   node.forEach((node: any) => {
@@ -25,7 +26,7 @@ export const interpreter = (context: contextType, node: any[]) => {
       }
       case 'command': {
         if (node.name === 'label') context.labelRef.addLabel(node);
-        if (node.name === 'ref') context.labelRef.addRef(node);
+        if (refCommands.includes(node.name)) context.labelRef.addRef(node);
         break;
       }
       default: {
