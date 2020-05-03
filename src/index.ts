@@ -23,6 +23,7 @@ const interpreter = (node: any) => {
           report(`${node.name}にラベルがありません`, 'error', node);
         }
       }
+      node.content.forEach((node: any) => interpreter(node));
       break;
     }
     case 'command': {
