@@ -16,8 +16,6 @@ module.exports = merge(common, {
           loader: 'ts-loader',
           options: {
             configFile: 'tsconfig.prod.json',
-            transpileOnly: true,
-            happyPackMode: true,
           },
         },
       },
