@@ -8,8 +8,14 @@ const texTest = (filePath: string, count: number): void => {
   const ast = texToDocumentAst(filePath);
   let reportCount = 0;
 
-  // @ts-ignore
-  const report = (errorText: string, reportType: reportKey, node: any): void => {
+  const report = (
+    // @ts-ignore
+    errorText: string,
+    // @ts-ignore
+    reportType: reportKey,
+    // @ts-ignore
+    node: any,
+  ): void => {
     reportCount++;
   };
 
