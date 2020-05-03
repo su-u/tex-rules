@@ -24,13 +24,14 @@ const texTest = (filePath: string, count: number): void => {
     report: report,
   };
   interpreter(context, ast.content);
+  context.labelRef.labelAggregate(report);
 
   expect(reportCount).toBe(count);
 };
 
 describe('interpreter', (): void => {
   test('ラベル参照無し', (): void => {
-    texTest('./src/__tests__/tex/interpreter_case_1.tex', 1);
+    texTest('./src/__tests__/tex/interpreter_case_1.tex', 4);
   });
   test('エラーなし', (): void => {
     texTest('./src/__tests__/tex/interpreter_case_2.tex', 0);
