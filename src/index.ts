@@ -43,12 +43,6 @@ const main = () => {
   documentAst.content.forEach((node: any) => interpreter(node));
 
   labelRef.labelAggregate(report);
-  labelRef.labelsList.forEach(y => {
-    console.debug(y);
-  });
-  labelRef.refsList.forEach(y => {
-    console.debug(y);
-  });
   reportOutput();
 };
 
