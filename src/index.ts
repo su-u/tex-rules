@@ -15,7 +15,7 @@ const switcher = (ast: any) => {
           if (!hasCaption) {
             const location = node.location;
             report(
-              'キャプションがありません',
+              `${node.name}にキャプションがありません`,
               node.name,
               location.start.line,
               location.start.column,
