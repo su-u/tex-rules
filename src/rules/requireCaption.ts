@@ -1,3 +1,4 @@
+// キャプションを必須にするルール
 // eslint-disable-next-line no-undef
 export const requireCaptionsList: ReadonlyArray<string> = ['figure', 'table'];
 
@@ -8,10 +9,7 @@ export const requireCaption = (ast: any): boolean => {
         return requireCaption(node.content);
       }
       case 'command': {
-        if (node.name === 'caption') {
-          return true;
-        }
-        return false;
+        return node.name === 'caption';
       }
       default:
         return false;

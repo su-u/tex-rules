@@ -27,7 +27,7 @@ const switcher = (ast: any) => {
 };
 
 const main = () => {
-  const texString = readFile('./tex/uno.tex');
+  const texString = readFile('./tex/sample.tex');
   const ast = TexToAst(texString);
   const documentAst = getDocument(ast);
   writeAstToJson('outDir/out.json', ast);

@@ -1,3 +1,4 @@
+// ラベルを必須にするルール
 // eslint-disable-next-line no-undef
 export const requireLabelsList: ReadonlyArray<string> = ['figure', 'table'];
 
@@ -8,10 +9,7 @@ export const requireLabel = (ast: any): boolean => {
         return requireLabel(node.content);
       }
       case 'command': {
-        if (node.name === 'label') {
-          return true;
-        }
-        return false;
+        return node.name === 'label';
       }
       default:
         return false;
