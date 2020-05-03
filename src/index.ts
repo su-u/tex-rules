@@ -13,26 +13,12 @@ const switcher = (ast: any) => {
       case 'env': {
         if (requireCaptionsList.includes(node.name)) {
           if (requireCaption(node.content)) {
-            const location = node.location;
-            report(
-              `${node.name}にキャプションがありません`,
-              'error',
-              node.name,
-              location.start.line,
-              location.start.column,
-            );
+            report(`${node.name}にキャプションがありません`, 'error', node);
           }
         }
         if (requireLabelsList.includes(node.name)) {
           if (requireLabel(node.content)) {
-            const location = node.location;
-            report(
-              `${node.name}にラベルがありません`,
-              'error',
-              node.name,
-              location.start.line,
-              location.start.column,
-            );
+            report(`${node.name}にラベルがありません`, 'error', node);
           }
         }
       }

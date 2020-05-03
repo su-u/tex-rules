@@ -17,14 +17,14 @@ export type reportType = {
   column: number;
 };
 
-export const report = (
-  errorText: string,
-  reportType: reportKey,
-  nodeName: string,
-  line: number,
-  column: number,
-) => {
-  reportList.push({ errorText, reportType, nodeName, line, column });
+export const report = (errorText: string, reportType: reportKey, node: any) => {
+  reportList.push({
+    errorText,
+    reportType,
+    nodeName: node.name,
+    line: node.location.start.line,
+    column: node.location.start.column,
+  });
 };
 
 export const reportOutput = () => {
