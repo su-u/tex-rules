@@ -7,16 +7,13 @@ export const sections: ReadonlyArray<string> = [
   'subsubsection',
   'subsubsubsection',
 ];
-const possibleNodes: ReadonlyArray<string> = [...sections, 'label', 'parbreak'];
+const possibleNodes: ReadonlyArray<string> = ['label', 'parbreak'];
 
 export const sectionIsRequiredText = (
   context: contextType,
   node: any,
-  index: number,
   array: any[],
 ) => {
-  if (!array[index + 1])
-    context.report('セクションの要素がありません。', 'error', node);
   const firstTextNodeIndex = array.findIndex(
     (node: any) => node.kind === 'text.string',
   );
