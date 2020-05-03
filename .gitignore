@@ -356,3 +356,4 @@ MigrationBackup/
 build/
 dist/
 outDir/
+coverage/
