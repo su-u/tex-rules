@@ -4,8 +4,9 @@
     "./src/__tests__/*"
   ],
   "compilerOptions": {
-    "outDir": "./dist",
+    "module": "commonjs",
     "sourceMap": true,
+    "outDir": "./dist",
     "strict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
@@ -22,7 +23,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "baseUrl": ".",
-    "target": "es5",
+    "target": "es3",
     "lib": [
       "es5",
       "dom",
