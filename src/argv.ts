@@ -1,6 +1,6 @@
 import argv from 'argv';
 
-export const texArgv = () => {
+export const execArgv = () => {
   const options = {
     name: 'tex',
     short: 't',

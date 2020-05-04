@@ -1,6 +1,6 @@
+import Enumerable from 'linq';
 // @ts-ignore
 import ListIt from 'list-it';
-import Enumerable from 'linq';
 import { WHITE, RESET, RED } from '@/util/console';
 import colors from 'colors/safe';
 
@@ -36,7 +36,7 @@ export class ReportClass {
     });
   };
 
-  reportOutput = (): void => {
+  reportOutput = (fileName: string): void => {
     const lines = Enumerable.from(this.reportList)
       .orderBy(line => line.line)
       .toArray()
@@ -54,6 +54,10 @@ export class ReportClass {
       });
     const listit = new ListIt();
 
-    console.log(listit.d(lines).toString());
+    if (lines.length > 0) {
+      console.log(colors.underline(fileName));
+      console.log(listit.d(lines).toString());
+      console.log();
+    }
   };
 }

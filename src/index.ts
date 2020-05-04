@@ -1,9 +1,10 @@
+import glob from 'glob';
 import { readFile } from '@/util/file';
 import { TexToAst, getDocument } from '@/util/tex';
 import { LabelRefClass } from '@/rules/requireLabelRef';
 import { ReportClass, reportKey } from '@/report';
 import { interpreter } from '@/interpreter';
-import { texArgv } from '@/argv';
+import { execArgv } from '@/argv';
 
 export type contextType = {
   labelRef: LabelRefClass;
@@ -11,24 +12,34 @@ export type contextType = {
 };
 
 const main = () => {
-  const argValue = texArgv();
-  const texString = readFile(argValue.tex);
-  const ast = TexToAst(texString);
-  const documentAst = getDocument(ast);
-  // writeAstToJson('outDir/out.json', ast);
-  // writeAstToJson('outDir/document.json', documentAst);
+  const args = execArgv();
 
-  const report = new ReportClass();
+  glob(args.tex, {}, (er, files: string[]) => {
+    if (er) {
+      console.error('ファイル読み込みでエラーが発生しました。');
+      console.error(er);
+      process.exit(1);
+    }
+    files.forEach(file => {
+      const texString = readFile(file);
+      const ast = TexToAst(texString);
+      const documentAst = getDocument(ast);
+      // writeAstToJson('outDir/out.json', ast);
+      // writeAstToJson('outDir/document.json', documentAst);
 
-  const context: contextType = {
-    labelRef: new LabelRefClass(),
-    report: report.report,
-  };
+      const report = new ReportClass();
 
-  interpreter(context, documentAst.content);
+      const context: contextType = {
+        labelRef: new LabelRefClass(),
+        report: report.report,
+      };
 
-  context.labelRef.labelAggregate(report.report);
-  report.reportOutput();
+      interpreter(context, documentAst.content);
+
+      context.labelRef.labelAggregate(report.report);
+      report.reportOutput(file);
+    });
+  });
 };
 
 main();

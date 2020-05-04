@@ -7,7 +7,7 @@ module.exports = {
   },
   // parser: 'babel-eslint',
   parserOptions: {
-    version: 2018,
+    version: 2017,
     sourceType: 'module',
   },
   extends: [
@@ -48,13 +48,5 @@ module.exports = {
     'max-len': 'warn',
     'prefer-const': 'warn',
     // 'arrow-parens': 'error',
-  },
-  settings: {
-    propWrapperFunctions: [
-      'forbidExtraProps',
-      { property: 'freeze', object: 'Object' },
-      { property: 'myFavoriteWrapper' },
-    ],
-    linkComponents: ['Hyperlink', { name: 'Link', linkAttribute: 'to' }],
-  },
+  }
 };
