@@ -1,3 +1,6 @@
+// @ts-ignore
+import ListIt from 'list-it';
+import Enumerable from 'linq';
 import { WHITE, RESET, RED } from '@/util/console';
 import colors from 'colors/safe';
 
@@ -34,15 +37,23 @@ export class ReportClass {
   };
 
   reportOutput = (): void => {
-    this.reportList.forEach(report => {
-      // eslint-disable-next-line no-console
-      console.log(
-        `${colors.gray(`${('   ' + report.line).substr(-4)}:${report.column}`)}  ${
-          reportOutputTextColor[report.reportType]
-        }${report.reportType}${RESET}  ${report.errorText}\t${colors.gray(`${
-          report.nodeName
-        }`)}${RESET}`,
-      );
-    });
+    const lines = Enumerable.from(this.reportList)
+      .orderBy(line => line.line)
+      .toArray()
+      .map(report => {
+        return [
+          `${colors.gray(
+            `${('   ' + report.line).substr(-4)}:${report.column}`,
+          )}`,
+          `${reportOutputTextColor[report.reportType]}${
+            report.reportType
+          }${RESET}`,
+          `${report.errorText}`,
+          `${colors.gray(`${report.nodeName}`)}${RESET}`,
+        ];
+      });
+    const listit = new ListIt();
+
+    console.log(listit.d(lines).toString());
   };
 }

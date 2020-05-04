@@ -1191,6 +1191,13 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
+"@types/linq@^2.2.33":
+  version "2.2.33"
+  resolved "https://registry.yarnpkg.com/@types/linq/-/linq-2.2.33.tgz#79e9726b8fb02469e5a8941c58a9fb4f95dc2b8c"
+  integrity sha1-eelya4+wJGnlqJQcWKn7T5XcK4w=
+  dependencies:
+    linq "*"
+
 "@types/log4js@^2.3.5":
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/@types/log4js/-/log4js-2.3.5.tgz#4d1e56da53d3c1820c08e9cd5092e68c3e1e822f"
@@ -1523,6 +1530,13 @@ ansi-align@^2.0.0:
   dependencies:
     string-width "^2.0.0"
 
+ansi-escape-sequences@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/ansi-escape-sequences/-/ansi-escape-sequences-5.1.2.tgz#b24471db2073009ebe28a7044ac7436bbd3d28e7"
+  integrity sha512-JcpoVp1W1bl1Qn4cVuiXEhD6+dyXKSOgCn2zlzE8inYgCJCBy1aPnUhlz6I4DFum8D4ovb9Qi/iAjUcGvG2lqw==
+  dependencies:
+    array-back "^4.0.0"
+
 ansi-escapes@^4.2.1:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-4.3.0.tgz#a4ce2b33d6b214b7950d8595c212f12ac9cc569d"
@@ -1607,6 +1621,11 @@ arr-union@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/arr-union/-/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
   integrity sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ=
+
+array-back@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/array-back/-/array-back-4.0.1.tgz#9b80312935a52062e1a233a9c7abeb5481b30e90"
+  integrity sha512-Z/JnaVEXv+A9xabHzN43FiiiWEE7gPCRXMrVmRm00tWbjZRul1iHm7ECzlyNq1p4a4ATXz+G9FJ3GqGOkOV3fg==
 
 array-equal@^1.0.0:
   version "1.0.0"
@@ -2711,6 +2730,11 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+eastasianwidth@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.2.0.tgz#696ce2ec0aa0e6ea93a397ffcf24aa7840c827cb"
+  integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
+
 ecc-jsbn@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
@@ -3630,6 +3654,11 @@ has@^1.0.3:
   integrity sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   dependencies:
     function-bind "^1.1.1"
+
+hash-arg@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/hash-arg/-/hash-arg-1.0.1.tgz#755d60c9d8cb7ccd7f645ac5255b4b0aad8e24ac"
+  integrity sha512-V+Q5oI+7/lEz9nfESRTpBNmch1TQx5ffHRTkm89EK1hoLfK+PfV2ujda0bQfGocSmGbKDfA/YyVKyB7+IKE5Tw==
 
 hash-base@^3.0.0:
   version "3.0.4"
@@ -4757,6 +4786,22 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+linq@*, linq@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/linq/-/linq-3.2.2.tgz#c012291054f54d78f608a37f7bceec95dca09e40"
+  integrity sha512-AtVkCFwg7dizILt88ent7Bng1OLAnKMWBOLo9Kh7ZPFK8OcfYGi2FEzmr66QJtV7uBYZVf19AbVs0B14rIUi+w==
+
+list-it@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/list-it/-/list-it-1.3.3.tgz#6985a53250e5284a280138762904bb8b0a684924"
+  integrity sha512-eu0S08CtyTbaPvUGaN+nRyMZdqwXp/5xHQYCozYJkI0tiudsqmiKoQqLlLePTL0D0QLZvUmwmUE8JyuDVB8Yjg==
+  dependencies:
+    ansi-escape-sequences "^5.1.2"
+    debug "^4.1.1"
+    eastasianwidth "^0.2.0"
+    hash-arg "^1.0.1"
+    node-getopt "^0.3.2"
+
 loader-fs-cache@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.2.tgz#54cedf6b727e1779fd8f01205f05f6e88706f086"
@@ -5155,6 +5200,11 @@ nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
+
+node-getopt@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/node-getopt/-/node-getopt-0.3.2.tgz#57507cd22f6f69650aa99252304a842f1224e44c"
+  integrity sha512-yqkmYrMbK1wPrfz7mgeYvA4tBperLg9FQ4S3Sau3nSAkpOA0x0zC8nQ1siBwozy1f4SE8vq2n1WKv99r+PCa1Q==
 
 node-int64@^0.4.0:
   version "0.4.0"

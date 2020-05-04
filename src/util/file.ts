@@ -3,7 +3,7 @@ import * as fs from 'fs';
 export const readFile = (filePath: string): string => {
   try {
     return fs.readFileSync(filePath, { encoding: 'utf-8' });
-  } catch( e ) {
+  } catch (e) {
     console.error('ファイルが開けませんでした。');
     process.exit(1);
   }
