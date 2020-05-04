@@ -8,7 +8,7 @@ export const texArgv = () => {
     description: 'texファイルへのパス',
   };
 
-  argv.version('v0.9.0');
+  argv.version('v0.9.1');
   const args = argv.option(options).run();
   if (args.targets.length === 0 && Object.keys(args.options).length === 0) {
     console.log('引数がありません.');
