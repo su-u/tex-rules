@@ -22,9 +22,9 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "baseUrl": ".",
-    "target": "es2019",
+    "target": "es5",
     "lib": [
-      "es2019",
+      "es5",
       "dom",
       "dom.iterable",
       "esnext"

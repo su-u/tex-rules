@@ -2,7 +2,7 @@ const path = require('path');
 module.exports = {
   output: {
     path: `${__dirname}/dist`,
-    filename: 'bundle.js',
+    filename: 'tex-rules.js',
   },
   entry: {
     main: path.resolve(__dirname, './src/index.ts'),
