@@ -16,9 +16,6 @@ module.exports = {
         include: path.resolve('./src'),
         exclude: /(node_modules|dist)/,
         loader: 'eslint-loader',
-        options: {
-          fix: true,
-        },
       },
       {
         test: /\.(js|jsx|ts|tsx)$/,

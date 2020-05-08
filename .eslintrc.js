@@ -7,7 +7,7 @@ module.exports = {
   },
   // parser: 'babel-eslint',
   parserOptions: {
-    version: 2017,
+    version: 2018,
     sourceType: 'module',
   },
   extends: [
@@ -48,5 +48,5 @@ module.exports = {
     'max-len': 'warn',
     'prefer-const': 'warn',
     // 'arrow-parens': 'error',
-  }
+  },
 };

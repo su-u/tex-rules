@@ -3,6 +3,10 @@ import { requireLabel, requireLabelsList } from '@/rules/requireLabel';
 import { contextType } from '@/index';
 import { refCommands } from '@/rules/requireLabelRef';
 import { sections, sectionIsRequiredText } from '@/rules/sectionIsRequiredText';
+import {
+  noPeriodBeforeTheCite,
+  noPeriodBeforeTheCiteList,
+} from '@/rules/noPeriodBeforeTheCite';
 
 // type execItems = {
 //   names: ReadonlyArray<string>;
@@ -69,6 +73,9 @@ export const interpreter = (context: contextType, node: any[]) => {
         }
         if (node.name === 'label') context.labelRef.addLabel(node);
         if (refCommands.includes(node.name)) context.labelRef.addRef(node);
+        if (noPeriodBeforeTheCiteList.includes(node.name)) {
+          noPeriodBeforeTheCite(context, node, array, index);
+        }
         break;
       }
       default: {
