@@ -3,7 +3,7 @@ import { contextType } from '@/index';
 
 export const noPeriodBeforeTheCiteList: ReadonlyArray<string> = ['cite'];
 
-const periodList: ReadonlyArray<string> = ['.', '．', '。'];
+const periodList: ReadonlyArray<string> = ['\\.', '．', '。'];
 
 export const noPeriodBeforeTheCite = (
   context: contextType,
@@ -21,8 +21,9 @@ export const noPeriodBeforeTheCite = (
   }
   const regex = RegExp(`(${periodList.join('|')})$`);
   if (array[index - 1].content.match(regex)) {
+    console.log(array[index - 1].content.match(regex));
     context.report(
-      `citeの前に${periodList
+      `citeの直前に${periodList
         .map(value => `「${value}」`)
         .join('')}があります。`,
       'error',
