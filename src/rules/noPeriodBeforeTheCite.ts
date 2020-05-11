@@ -21,7 +21,6 @@ export const noPeriodBeforeTheCite = (
   }
   const regex = RegExp(`(${periodList.join('|')})$`);
   if (array[index - 1].content.match(regex)) {
-    console.log(array[index - 1].content.match(regex));
     context.report(
       `citeの直前に${periodList
         .map(value => `「${value}」`)
